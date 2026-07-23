@@ -24,5 +24,6 @@ export interface Proposal {
 export interface AcceptProposalPayload {
   accepted: boolean;
   acceptedAt: string;
+  brideMessage?: string;
   answer: string;
 }
