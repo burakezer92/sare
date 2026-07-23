@@ -171,7 +171,7 @@ canvas {
 .error-message {
   border-color: #f2b9c0;
   background: #fff1f2;
-  color: #fff1f2;
+  color: #a84870;
 }
 
 .proposal-card {
@@ -334,7 +334,7 @@ canvas {
 
 .proposal-error {
   margin: 18px 0 0;
-  color: #b4233c;
+  color: #a84870;
   font-size: 14px;
   font-weight: 700;
 }
@@ -895,7 +895,7 @@ canvas {
   flex: 0 0 auto;
   place-items: center;
 
-  background: linear-gradient(145deg, #f7bfd3, #dd85a7);
+  background: linear-gradient(145deg, #f7bfd3, #a84870);
   color: #fff;
 
   font-weight: 700;
@@ -1240,7 +1240,7 @@ canvas {
 
 .wish-card time {
   font-size: 16px;
-  color: #6f5561;
+  color: #a84870;
   line-height: 1.6;
 }
 

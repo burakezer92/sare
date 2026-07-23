@@ -111,7 +111,7 @@ export default function ProposalGate({
           {proposal.brideMessage && (
             <blockquote className="bride-message">
               <p>“{proposal.brideMessage}”</p>
-              <footer>Sare</footer>
+              <h3 style={{ color: "#a84870" }}>Sare</h3>
             </blockquote>
           )}
 
