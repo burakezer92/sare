@@ -1,0 +1,1406 @@
+@import url("https://fonts.googleapis.com/css2?family=Condiment&family=Playwrite+NZ+Basic:wght@100..400&display=swap");
+:root {
+  font-family: "Condiment", cursive;
+  color: #402b35;
+  background: #fff7fa;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Condiment", cursive;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #fff7fa;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+img,
+video,
+canvas {
+  max-width: 100%;
+}
+
+.app {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 48px 20px 0;
+  isolation: isolate;
+  background: #fff7fa;
+}
+
+.app::before {
+  position: fixed;
+  inset: -12px;
+  z-index: -2;
+  content: "";
+  pointer-events: none;
+  background-image: url("./assets/arkaplan.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(2px);
+  transform: scale(1.03);
+}
+
+.app::after {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 242, 248, 0.58),
+    rgba(255, 250, 245, 0.4)
+  );
+}
+
+.page-container {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 920px);
+  margin: 0 auto;
+}
+
+.section-heading {
+  max-width: 650px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.section-kicker {
+  margin: 0 0 10px;
+  color: #ad5579;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: #402b35;
+  font-size: clamp(34px, 7vw, 52px);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.section-heading > p:last-child {
+  margin: 18px auto 0;
+  color: #765b67;
+  line-height: 1.7;
+}
+
+.hero {
+  padding: 32px 0 42px;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #b2537b;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 760px;
+  margin: 0 auto;
+  color: #402b35;
+  font-size: clamp(42px, 9vw, 76px);
+  font-weight: 500;
+  line-height: 1.02;
+}
+
+.hero-description {
+  max-width: 600px;
+  margin: 24px auto 0;
+  color: #765b67;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.status-card {
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 20px 60px rgba(74, 38, 54, 0.15);
+  text-align: center;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.status-card p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.status-card strong + p {
+  margin-top: 10px;
+}
+
+.error-message {
+  border-color: #f2b9c0;
+  background: #fff1f2;
+  color: #8c2635;
+}
+
+.proposal-card {
+  position: relative;
+  overflow: hidden;
+  padding: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 20px 60px rgba(74, 38, 54, 0.15);
+  text-align: center;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.proposal-card::before {
+  position: absolute;
+  top: -70px;
+  right: -70px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(255, 205, 222, 0.45);
+  content: "";
+  filter: blur(4px);
+}
+
+.proposal-card::after {
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: rgba(255, 227, 207, 0.55);
+  content: "";
+}
+
+.proposal-card__content {
+  position: relative;
+  z-index: 1;
+}
+
+.proposal-icon {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 44px;
+}
+
+.proposal-label {
+  margin: 0 0 10px;
+  color: #ad5579;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.proposal-card h2 {
+  max-width: 560px;
+  margin: 0 auto;
+  color: #402b35;
+  font-size: clamp(30px, 6vw, 48px);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.proposal-description {
+  max-width: 560px;
+  margin: 18px auto 0;
+  color: #765b67;
+}
+
+.proposal-password-form {
+  max-width: 560px;
+  margin: 32px auto 0;
+  text-align: left;
+}
+
+.proposal-password-form label {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.proposal-password-row {
+  display: flex;
+  gap: 10px;
+}
+
+.proposal-password-row input {
+  min-width: 0;
+  flex: 1;
+  padding: 15px 18px;
+  border: 1px solid rgba(181, 112, 142, 0.35);
+  border-radius: 14px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.52);
+  color: #402b35;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.proposal-password-row input:focus {
+  border-color: #bc668a;
+  box-shadow: 0 0 0 4px rgba(188, 102, 138, 0.12);
+}
+
+.proposal-password-row button,
+.accept-button {
+  border: 0;
+  border-radius: 14px;
+  background: #a84870;
+  color: #fff;
+  font-weight: 800;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+}
+
+.proposal-password-row button {
+  padding: 15px 22px;
+}
+
+.proposal-password-row button:hover,
+.accept-button:hover:not(:disabled) {
+  background: #90385d;
+  box-shadow: 0 12px 30px rgba(144, 56, 93, 0.24);
+  transform: translateY(-2px);
+}
+
+.proposal-question {
+  margin-top: 32px;
+  padding: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.proposal-question p {
+  margin: 0 0 20px;
+  font-size: 24px;
+  line-height: 1.4;
+}
+
+.accept-button {
+  width: 100%;
+  padding: 17px 24px;
+  font-size: 17px;
+}
+
+.proposal-error {
+  margin: 18px 0 0;
+  color: #b4233c;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.proposal-card--accepted {
+  background:
+    radial-gradient(circle at top, rgba(255, 224, 234, 0.5), transparent 62%),
+    rgba(255, 255, 255, 0.3);
+}
+
+.proposal-card--accepted .proposal-icon {
+  animation: accepted-ring 1.8s ease-in-out infinite;
+}
+
+.accepted-date {
+  display: block;
+  margin-top: 22px;
+  color: #9b5271;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@keyframes accepted-ring {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  50% {
+    transform: scale(1.12) rotate(5deg);
+  }
+}
+
+.sakura-rain {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.sakura-petal {
+  position: absolute;
+  border-radius: 80% 20% 70% 30%;
+  background:
+    radial-gradient(
+      circle at 28% 30%,
+      rgba(255, 255, 255, 0.96),
+      transparent 24%
+    ),
+    linear-gradient(135deg, #ffe4ef 0%, #f7abc8 52%, #df719d 100%);
+  box-shadow:
+    0 3px 8px rgba(168, 72, 112, 0.16),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.78);
+  transform-origin: center;
+}
+
+.sakura-petal::after {
+  position: absolute;
+  top: 48%;
+  left: 18%;
+  width: 64%;
+  height: 1px;
+  background: rgba(179, 88, 125, 0.3);
+  content: "";
+  transform: rotate(-18deg);
+  transform-origin: left center;
+}
+
+.sakura-petal--ambient {
+  top: -45px;
+  left: var(--petal-left);
+  width: var(--petal-size);
+  height: calc(var(--petal-size) * 0.72);
+  opacity: var(--petal-opacity);
+  animation: sakura-fall var(--petal-duration) linear infinite;
+  animation-delay: var(--petal-delay);
+}
+
+.sakura-petal--side {
+  top: var(--side-start-y);
+  width: var(--side-size);
+  height: calc(var(--side-size) * 0.72);
+  opacity: 0;
+  animation-duration: var(--side-duration);
+  animation-timing-function: cubic-bezier(0.15, 0.7, 0.25, 1);
+  animation-delay: var(--side-delay);
+  animation-fill-mode: both;
+}
+
+.sakura-petal--left {
+  left: calc(var(--side-size) * -2);
+  animation-name: sakura-from-left;
+}
+
+.sakura-petal--right {
+  right: calc(var(--side-size) * -2);
+  animation-name: sakura-from-right;
+}
+
+@keyframes sakura-fall {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg) rotateX(0deg);
+  }
+
+  25% {
+    transform: translate3d(calc(var(--petal-drift) * 0.35), 25vh, 0)
+      rotate(calc(var(--petal-rotation) * 0.25)) rotateX(90deg);
+  }
+
+  50% {
+    transform: translate3d(calc(var(--petal-drift) * -0.25), 52vh, 0)
+      rotate(calc(var(--petal-rotation) * 0.5)) rotateX(180deg);
+  }
+
+  75% {
+    transform: translate3d(calc(var(--petal-drift) * 0.65), 78vh, 0)
+      rotate(calc(var(--petal-rotation) * 0.75)) rotateX(270deg);
+  }
+
+  100% {
+    transform: translate3d(var(--petal-drift), 110vh, 0)
+      rotate(var(--petal-rotation)) rotateX(360deg);
+  }
+}
+
+@keyframes sakura-from-left {
+  0% {
+    opacity: 0;
+    transform: translate3d(-40px, 0, 0) rotate(0deg) scale(0.7);
+  }
+
+  12% {
+    opacity: var(--side-opacity);
+  }
+
+  65% {
+    opacity: var(--side-opacity);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--side-distance-x), var(--side-distance-y), 0)
+      rotate(var(--side-rotation)) scale(1.1);
+  }
+}
+
+@keyframes sakura-from-right {
+  0% {
+    opacity: 0;
+    transform: translate3d(40px, 0, 0) rotate(0deg) scale(0.7);
+  }
+
+  12% {
+    opacity: var(--side-opacity);
+  }
+
+  65% {
+    opacity: var(--side-opacity);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(
+        calc(var(--side-distance-x) * -1),
+        var(--side-distance-y),
+        0
+      )
+      rotate(calc(var(--side-rotation) * -1)) scale(1.1);
+  }
+}
+
+.proposal-video-section {
+  position: relative;
+  z-index: 1;
+}
+
+.proposal-video-wrapper {
+  position: relative;
+  width: min(100%, 760px);
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid rgba(181, 112, 142, 0.22);
+  border-radius: 30px;
+  background: #1c1519;
+  box-shadow: 0 28px 80px rgba(70, 35, 50, 0.2);
+}
+
+.proposal-video {
+  display: block;
+  width: 100%;
+  max-height: 82vh;
+  object-fit: contain;
+  background: #120d10;
+}
+
+.proposal-video-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(21, 10, 15, 0.58),
+    transparent 24%,
+    transparent 66%,
+    rgba(21, 10, 15, 0.74)
+  );
+}
+
+.proposal-video-title {
+  color: #fff;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.45);
+}
+
+.proposal-video-title p {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+}
+
+.proposal-video-title span {
+  display: block;
+  margin-top: 7px;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.proposal-video-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  pointer-events: auto;
+}
+
+.proposal-video-controls button {
+  padding: 11px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  background: rgba(28, 15, 21, 0.64);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  backdrop-filter: blur(12px);
+  transition:
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+.proposal-video-controls button:hover {
+  background: rgba(168, 72, 112, 0.9);
+  transform: translateY(-2px);
+}
+
+.proposal-video-error {
+  display: flex;
+  min-height: 420px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: #fff;
+  text-align: center;
+}
+
+.proposal-video-error span {
+  margin-bottom: 18px;
+  font-size: 46px;
+}
+
+.proposal-video-error strong {
+  font-size: 20px;
+}
+
+.proposal-video-error p {
+  max-width: 450px;
+  margin: 12px 0 0;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.6;
+}
+
+.proposal-video-note {
+  margin: 14px 0 0;
+  color: #806571;
+  font-size: 13px;
+  text-align: center;
+}
+
+.memory-book-section {
+  position: relative;
+  z-index: 1;
+  margin-top: 100px;
+  padding-bottom: 40px;
+}
+
+.memory-book-layout {
+  display: flex;
+  width: min(100%, 760px);
+  margin: 0 auto;
+  flex-direction: column;
+  gap: 42px;
+  align-items: stretch;
+}
+
+.wish-form,
+.wish-list-container {
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 20px 60px rgba(74, 38, 54, 0.13);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.wish-form {
+  position: static;
+  width: 100%;
+  padding: 28px;
+}
+
+.wish-form-header {
+  text-align: center;
+  gap: 15px;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+.wish-form-header > span {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 16px;
+  background: #fff0f5;
+  font-size: 23px;
+}
+
+.wish-form-header h3,
+.wish-list-header h3 {
+  margin: 0;
+  color: #402b35;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.wish-form-header p {
+  margin: 7px 0 0;
+  color: #806571;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.wish-form-field {
+  position: relative;
+  margin-bottom: 21px;
+}
+
+.wish-form-field label {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.wish-form-field input,
+.wish-form-field textarea {
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(181, 112, 142, 0.35);
+  border-radius: 15px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.52);
+  color: #402b35;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.wish-form-field input {
+  padding: 15px 17px 32px;
+}
+
+.wish-form-field textarea {
+  min-height: 145px;
+  padding: 15px 17px 32px;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+.wish-form-field input:focus,
+.wish-form-field textarea:focus {
+  border-color: #bc668a;
+  box-shadow: 0 0 0 4px rgba(188, 102, 138, 0.12);
+}
+
+.wish-form-field input:disabled,
+.wish-form-field textarea:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.character-counter {
+  position: absolute;
+  right: 13px;
+  bottom: 10px;
+  color: #9b7c89;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.wish-submit-button {
+  width: 100%;
+  padding: 16px 22px;
+  border: 0;
+  font-size: 24px;
+  border-radius: 15px;
+  background: #a84870;
+  color: #fff;
+  font-weight: 800;
+  box-shadow: 0 15px 30px rgba(144, 56, 93, 0.18);
+  transition:
+    background 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.wish-submit-button:hover:not(:disabled) {
+  background: #90385d;
+  box-shadow: 0 19px 36px rgba(144, 56, 93, 0.25);
+  transform: translateY(-2px);
+}
+
+.wish-form-message {
+  padding: 12px 14px;
+  border-radius: 12px;
+
+  font-weight: 700;
+}
+
+.wish-form-message--error {
+  border: 1px solid #f2b9c0;
+  background: #fff1f2;
+  color: #a82a3e;
+}
+
+.wish-form-message--success {
+  border: 1px solid #bce7c9;
+  background: #f2fff6;
+  color: #397149;
+}
+
+.wish-list-container {
+  padding: 28px;
+}
+
+.wish-list-header {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.wish-list-header .section-kicker {
+  margin-bottom: 6px;
+}
+
+.wish-count {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff0f5;
+  color: #a84870;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.wish-empty-state {
+  display: flex;
+  min-height: 270px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 20px;
+  border: 1px dashed rgba(181, 112, 142, 0.4);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.16);
+  text-align: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.wish-empty-state > span {
+  margin-bottom: 15px;
+  font-size: 42px;
+}
+
+.wish-empty-state strong {
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.wish-empty-state p {
+  max-width: 300px;
+  margin: 10px 0 0;
+  color: #806571;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.wish-list {
+  display: flex;
+  max-height: none;
+  flex-direction: column;
+  gap: 18px;
+  overflow: visible;
+  padding: 0;
+}
+
+.wish-list::-webkit-scrollbar {
+  width: 7px;
+}
+
+.wish-list::-webkit-scrollbar-track {
+  border-radius: 999px;
+  background: #f6e9ee;
+}
+
+.wish-list::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: #d59ab2;
+}
+
+.wish-card {
+  position: relative;
+  overflow: hidden;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+}
+
+.wish-card-top {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.wish-avatar {
+  flex: 0 0 auto;
+  place-items: center;
+
+  background: linear-gradient(145deg, #f7bfd3, #dd85a7);
+  color: #fff;
+
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(168, 72, 112, 0.19);
+}
+
+.wish-card h4 {
+  margin: 0;
+  color: #51303e;
+  font-size: 15px;
+}
+
+.wish-card time {
+  display: block;
+  margin-top: 4px;
+}
+
+.wish-message {
+  position: relative;
+  z-index: 1;
+  margin: 17px 0 0;
+
+  font-style: italic;
+
+  overflow-wrap: anywhere;
+}
+
+.wish-decoration {
+  position: absolute;
+  right: -5px;
+  bottom: -9px;
+  opacity: 0.14;
+  font-size: 62px;
+  transform: rotate(-17deg);
+}
+
+.page-footer {
+  position: relative;
+  z-index: 1;
+  padding: 90px 20px 45px;
+  text-align: center;
+}
+
+.page-footer > span {
+  font-size: 30px;
+}
+
+.page-footer p {
+  margin: 12px 0 5px;
+  color: #713d54;
+  font-size: 24px;
+}
+
+.page-footer small {
+  color: #90727f;
+  font-style: italic;
+}
+
+@media (max-width: 760px) {
+  .app {
+    padding: 28px 16px 0;
+  }
+
+  .app::before {
+    background-position: center top;
+    filter: blur(1px);
+  }
+
+  .app::after {
+    background: rgba(255, 245, 249, 0.46);
+  }
+
+  .hero {
+    padding-top: 20px;
+  }
+
+  .proposal-card {
+    padding: 38px 24px;
+  }
+
+  .memory-book-section {
+    margin-top: 75px;
+  }
+
+  .memory-book-layout {
+    gap: 32px;
+  }
+
+  .sakura-petal--ambient:nth-child(n + 31) {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .proposal-password-row {
+    flex-direction: column;
+  }
+
+  .proposal-password-row button {
+    width: 100%;
+  }
+
+  .proposal-video-wrapper {
+    border-radius: 22px;
+  }
+
+  .proposal-video-overlay {
+    padding: 18px;
+  }
+
+  .proposal-video-controls {
+    gap: 7px;
+  }
+
+  .proposal-video-controls button {
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+
+  .proposal-video-title span {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .hero h1 {
+    font-size: clamp(39px, 13vw, 58px);
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .proposal-card {
+    padding: 32px 18px;
+    border-radius: 24px;
+  }
+
+  .proposal-question {
+    padding: 20px 16px;
+  }
+
+  .proposal-question p {
+    font-size: 21px;
+  }
+
+  .proposal-video-overlay {
+    padding: 14px;
+  }
+
+  .proposal-video-title p {
+    font-size: 11px;
+  }
+
+  .proposal-video-controls button {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+
+  .wish-form,
+  .wish-list-container {
+    padding: 21px;
+    border-radius: 23px;
+  }
+
+  .wish-form-header h3,
+  .wish-list-header h3 {
+    font-size: 22px;
+  }
+
+  .wish-list-header {
+    align-items: flex-start;
+  }
+
+  .page-footer {
+    padding-top: 70px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .sakura-petal {
+    display: none;
+  }
+
+  .proposal-card--accepted .proposal-icon {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+.bride-message-field {
+  position: relative;
+  margin: 24px 0;
+  text-align: left;
+}
+
+.bride-message-field label {
+  display: block;
+  margin-bottom: 10px;
+  color: #684c58;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.bride-message-field textarea {
+  display: block;
+  width: 100%;
+  min-height: 140px;
+  padding: 16px 18px 36px;
+  border: 1px solid rgba(181, 112, 142, 0.35);
+  border-radius: 18px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.34);
+  color: #402b35;
+  font-size: 19px;
+  line-height: 1.5;
+  resize: vertical;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.bride-message-field textarea::placeholder {
+  color: rgba(90, 61, 74, 0.58);
+}
+
+.bride-message-field textarea:focus {
+  border-color: #bc668a;
+  box-shadow: 0 0 0 4px rgba(188, 102, 138, 0.12);
+}
+
+.bride-message-counter {
+  position: absolute;
+  right: 14px;
+  bottom: 11px;
+  color: #987482;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.bride-message {
+  width: min(100%, 600px);
+  margin: 30px auto 0;
+  padding: 25px;
+  border: 1px solid rgba(181, 112, 142, 0.25);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.26);
+  color: #684c58;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.bride-message__icon {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+.bride-message p {
+  margin: 0;
+  font-size: clamp(22px, 5vw, 30px);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.bride-message footer {
+  margin-top: 14px;
+  color: #a84870;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .bride-message-field textarea {
+    min-height: 125px;
+    padding: 14px 15px 34px;
+    font-size: 17px;
+  }
+
+  .bride-message {
+    padding: 20px 16px;
+  }
+}
+
+.wish-form-field input,
+.wish-form-field textarea,
+.wish-form-field input::placeholder,
+.wish-form-field textarea::placeholder,
+.bride-message-field textarea,
+.bride-message-field textarea::placeholder,
+.wish-message,
+.bride-message p,
+.yazi {
+  font-family: "Condiment", cursive;
+}
+
+.wish-card h4 {
+  font-family: "Condiment", cursive;
+}
+
+.wish-list-header {
+  justify-content: center;
+  text-align: center;
+}
+
+.wish-list-header > div {
+  width: 100%;
+}
+.proposal-card--accepted .proposal-card__content h2 {
+  margin-top: 30px;
+}
+
+.wish-form-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  font-size: 18px;
+  line-height: 1.8;
+
+  width: 100%;
+  margin: 18px auto;
+}
+
+.wish-card time {
+  font-size: 16px;
+  color: #6f5561;
+  line-height: 1.6;
+}
+
+.wish-message {
+  font-size: 28px;
+  line-height: 2;
+  color: #4f3540;
+}
+
+.proposal-description {
+  font-size: 23px;
+  line-height: 1.9;
+}
+
+.section-heading > p:last-child,
+.hero-description {
+  font-size: 22px;
+  line-height: 1.9;
+}
+
+@media (max-width: 480px) {
+  .proposal-description {
+    font-size: 19px;
+  }
+
+  .section-heading > p:last-child,
+  .hero-description {
+    font-size: 18px;
+  }
+}
+
+.error-message,
+.form-error,
+.proposal-error {
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+input,
+textarea {
+  font-family: "Playwrite NZ Basic", cursive;
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-family: "Playwrite NZ Basic", cursive;
+  font-size: 24px;
+}
+
+label {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.proposal-password-form input {
+  font-size: 20px;
+  min-height: 52px;
+  padding: 14px 16px;
+}
+.wish-form input,
+.wish-name-input,
+input[type="text"] {
+  font-size: 32px !important;
+  line-height: 1.7;
+}
+
+.wish-form textarea,
+.wish-message-input,
+textarea {
+  font-size: 32px !important;
+  line-height: 1.9;
+}
+
+.wish-form input::placeholder,
+.wish-form textarea::placeholder,
+input::placeholder,
+textarea::placeholder {
+  font-size: 24px;
+}
+.wish-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  margin: 0;
+
+  font-size: 20px;
+  line-height: 1;
+
+  transform: translateY(-2px);
+}
+.proposal-password-row {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.proposal-password-row input {
+  width: 100%;
+}
+
+.proposal-password-row button {
+  width: auto;
+  margin: 0 auto;
+  padding: 10px 28px;
+  font-size: 24px;
+  font-weight: 800;
+}
+body {
+  font-size: 24px;
+}
+
+p,
+span,
+small,
+label,
+input,
+textarea,
+button,
+a,
+li,
+td,
+th,
+time,
+strong,
+em,
+.section-kicker,
+.eyebrow,
+.proposal-label,
+.accepted-date,
+.proposal-error,
+.error-message,
+.form-error,
+.wish-count,
+.character-counter,
+.bride-message-counter,
+.proposal-video-title p,
+.proposal-video-controls button,
+.proposal-video-note,
+.wish-form-message,
+.wish-card h4,
+.wish-card time,
+.wish-form-header p,
+.section-heading > p:last-child,
+.hero-description {
+  font-size: max(28px, 1em) !important;
+}
+
+.wish-card time {
+  font-size: 18px !important;
+}
+.proposal-icon {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 1rem;
+}
