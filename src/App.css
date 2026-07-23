@@ -171,7 +171,7 @@ canvas {
 .error-message {
   border-color: #f2b9c0;
   background: #fff1f2;
-  color: #8c2635;
+  color: #fff1f2;
 }
 
 .proposal-card {
@@ -338,13 +338,6 @@ canvas {
   font-size: 14px;
   font-weight: 700;
 }
-
-.proposal-card--accepted {
-  background:
-    radial-gradient(circle at top, rgba(255, 224, 234, 0.5), transparent 62%),
-    rgba(255, 255, 255, 0.3);
-}
-
 .proposal-card--accepted .proposal-icon {
   animation: accepted-ring 1.8s ease-in-out infinite;
 }
@@ -383,7 +376,7 @@ canvas {
     radial-gradient(
       circle at 28% 30%,
       rgba(255, 255, 255, 0.96),
-      transparent 24%
+      transparent 10%
     ),
     linear-gradient(135deg, #ffe4ef 0%, #f7abc8 52%, #df719d 100%);
   box-shadow:
@@ -1254,7 +1247,7 @@ canvas {
 .wish-message {
   font-size: 28px;
   line-height: 2;
-  color: #4f3540;
+  color: #f8dfe8;
 }
 
 .proposal-description {
