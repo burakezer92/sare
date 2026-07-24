@@ -861,6 +861,7 @@ canvas {
 .wish-card-top {
   display: flex;
   gap: 12px;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -898,8 +899,8 @@ canvas {
 
 .wish-decoration {
   position: absolute;
-  right: -5px;
-  bottom: -9px;
+  right: -2px;
+  bottom: -6px;
   opacity: 0.14;
   font-size: 62px;
   transform: rotate(-17deg);
@@ -1287,6 +1288,7 @@ input[type="text"] {
 textarea {
   font-size: 32px !important;
   line-height: 1.9;
+  resize: unset;
 }
 
 .wish-form input::placeholder,

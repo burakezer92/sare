@@ -42,19 +42,19 @@ export default function MemoryBook({ wishes, onWishCreated }: MemoryBookProps) {
     const trimmedMessage = form.message.trim();
 
     if (trimmedName.length < 2) {
-      return "isim en az 2 karakter olmalı.";
+      return "isim en az 2 karakter olmalı";
     }
 
     if (trimmedName.length > 40) {
-      return "isim en fazla 40 karakter olabilir.";
+      return "isim en fazla 40 karakter olabilir";
     }
 
     if (trimmedMessage.length < 3) {
-      return "iyi dilek en az 3 karakter olmalı.";
+      return "iyi dilek en az 3 karakter olmalı";
     }
 
     if (trimmedMessage.length > 240) {
-      return "iyi dilek en fazla 240 karakter olabilir.";
+      return "iyi dilek en fazla 240 karakter olabilir";
     }
 
     return null;
@@ -171,27 +171,20 @@ export default function MemoryBook({ wishes, onWishCreated }: MemoryBookProps) {
             <div className="wish-list">
               {wishes.map((wish) => (
                 <article key={wish.id} className="wish-card">
-                  <div className="wish-card-top">
-                    <div className="wish-avatar ">
-                      {wish.name.trim().charAt(0).toLocaleUpperCase("tr-TR")}
-                    </div>
-
-                    <div>
-                      <h4 className="yazi">{wish.name}</h4>
-
-                      <time dateTime={wish.createdAt}>
-                        {new Intl.DateTimeFormat("tr-TR", {
-                          day: "2-digit",
-                          month: "long",
-                          year: "numeric",
-                          hour: "2-digit",
-                          minute: "2-digit",
-                        }).format(new Date(wish.createdAt))}
-                      </time>
-                    </div>
-                  </div>
-
                   <p className="wish-message yazi">“{wish.message}”</p>
+                  <div className="wish-card-top">
+                    <h4 className="yazi">{wish.name}</h4>
+
+                    <time dateTime={wish.createdAt}>
+                      {new Intl.DateTimeFormat("tr-TR", {
+                        day: "2-digit",
+                        month: "long",
+                        year: "numeric",
+                        hour: "2-digit",
+                        minute: "2-digit",
+                      }).format(new Date(wish.createdAt))}
+                    </time>
+                  </div>
 
                   <span className="wish-decoration">🌸</span>
                 </article>
