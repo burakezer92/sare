@@ -129,7 +129,7 @@ export default function MemoryBook({ wishes, onWishCreated }: MemoryBookProps) {
               name="message"
               value={form.message}
               onChange={handleChange}
-              placeholder="Burak & Sare için birkaç güzel kelime..."
+              placeholder="Sare & Burak için birkaç güzel kelime..."
               rows={6}
               minLength={3}
               maxLength={240}
