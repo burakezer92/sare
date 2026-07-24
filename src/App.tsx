@@ -108,6 +108,11 @@ function App() {
           </>
         )}
       </div>
+      <div
+        id="sakura-page-end"
+        className="sakura-page-end"
+        aria-hidden="true"
+      />
     </main>
   );
 }

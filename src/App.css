@@ -1381,3 +1381,145 @@ em,
   display: block;
   margin: 0 auto 1rem;
 }
+/* Fiziksel olarak hareket eden yapraklar */
+.sakura-rain {
+  perspective: 900px;
+}
+
+.sakura-petal--ambient {
+  top: 0;
+  left: 0;
+  width: var(--fall-size);
+  height: calc(var(--fall-size) * 0.72);
+  opacity: var(--fall-opacity);
+  animation: none;
+  will-change: transform;
+  backface-visibility: visible;
+}
+
+/* Yaprakların birikeceği kutular */
+.status-card,
+.proposal-card,
+.proposal-question,
+.proposal-video-wrapper,
+.wish-form,
+.wish-list-container,
+.wish-card,
+.bride-message,
+[data-sakura-box] {
+  position: relative;
+}
+
+/* Yalnızca Sare yazısı */
+[data-sakura-text] {
+  position: relative;
+  display: inline-block;
+  overflow: visible;
+}
+
+/* Kutuların üst kenarındaki birikme alanı */
+.sakura-pile {
+  position: absolute;
+  top: -1px;
+  right: 0;
+  left: 0;
+  z-index: 80;
+  display: block;
+  height: 30px;
+  overflow: visible;
+  pointer-events: none;
+}
+
+/* Sare yazısının üzerindeki alan */
+.sakura-pile--text {
+  top: -2px;
+  height: 22px;
+}
+
+/* Sitenin gerçek en son noktası */
+.sakura-page-end {
+  position: relative;
+  left: 50%;
+  z-index: 30;
+  width: 100vw;
+  height: 1px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* Sayfa sonundaki birikme yukarı doğru büyür */
+.sakura-pile--page-end {
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 82px;
+  overflow: visible;
+}
+
+/* Birikmiş yapraklar */
+.sakura-petal--settled {
+  top: var(--settled-depth);
+  left: var(--settled-left);
+  width: var(--settled-size);
+  height: calc(var(--settled-size) * 0.72);
+  opacity: var(--settled-opacity);
+  animation: sakura-settle-bounce 620ms cubic-bezier(0.18, 0.82, 0.26, 1.15)
+    both;
+  will-change: transform;
+}
+
+/* Sayfa sonundaki yaprakların konumu */
+.sakura-pile--page-end .sakura-petal--settled {
+  top: auto;
+  bottom: var(--settled-depth);
+}
+
+/* Yaprak yüzeye değdiğinde küçük sekme */
+@keyframes sakura-settle-bounce {
+  0% {
+    opacity: var(--settled-opacity);
+    transform: translate3d(-50%, -85%, 0)
+      rotate(calc(var(--settled-rotation) - 28deg)) scale(0.88);
+  }
+
+  55% {
+    transform: translate3d(-50%, -12%, 0)
+      rotate(calc(var(--settled-rotation) + 10deg)) scale(1.06);
+  }
+
+  76% {
+    transform: translate3d(-50%, -48%, 0)
+      rotate(calc(var(--settled-rotation) - 5deg)) scale(0.98);
+  }
+
+  100% {
+    opacity: var(--settled-opacity);
+    transform: translate3d(-50%, -35%, 0) rotate(var(--settled-rotation))
+      scale(1);
+  }
+}
+
+@media (max-width: 760px) {
+  .sakura-pile--surface .sakura-petal--settled:nth-child(n + 17) {
+    display: none;
+  }
+
+  .sakura-pile--page-end {
+    height: 68px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sakura-petal--ambient,
+  .sakura-petal--side {
+    display: none;
+  }
+
+  .sakura-petal--settled {
+    display: block;
+    opacity: var(--settled-opacity);
+    animation: none !important;
+    transform: translate3d(-50%, -35%, 0) rotate(var(--settled-rotation));
+  }
+}
