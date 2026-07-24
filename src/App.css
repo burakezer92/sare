@@ -180,34 +180,9 @@ canvas {
   padding: 48px;
   border: 1px solid rgba(255, 255, 255, 0.45);
   border-radius: 30px;
-  background: rgba(65, 52, 59, 0.58);
+  background: rgba(65, 52, 59, 0.4);
   box-shadow: 0 20px 60px rgba(74, 38, 54, 0.15);
   text-align: center;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-.proposal-card::before {
-  position: absolute;
-  top: -70px;
-  right: -70px;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  background: rgba(255, 205, 222, 0.45);
-  content: "";
-  filter: blur(4px);
-}
-
-.proposal-card::after {
-  position: absolute;
-  bottom: -80px;
-  left: -80px;
-  width: 190px;
-  height: 190px;
-  border-radius: 50%;
-  background: rgba(255, 227, 207, 0.55);
-  content: "";
 }
 
 .proposal-card__content {
@@ -640,10 +615,8 @@ canvas {
 .wish-list-container {
   border: 1px solid rgba(255, 255, 255, 0.45);
   border-radius: 28px;
-  background: rgba(65, 52, 59, 0.58);
+  background: rgba(65, 52, 59, 0.4);
   box-shadow: 0 20px 60px rgba(74, 38, 54, 0.13);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
 }
 
 .wish-form {

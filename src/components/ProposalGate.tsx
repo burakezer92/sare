@@ -28,7 +28,7 @@ export default function ProposalGate({
     const enteredPassword = password.trim();
 
     if (!enteredPassword) {
-      setErrorMessage("Önce sana verilen sifreyi yazmalısın.");
+      setErrorMessage("Önce sana verilen sifreyi yazmalısın");
       return;
     }
 
@@ -104,8 +104,8 @@ export default function ProposalGate({
           <h2>Evet, birlikte bir ömür!</h2>
 
           <p className="proposal-description">
-            Bu hikâyenin en güzel cevabı verildi. Şimdi sonsuza kadar sürecek
-            bölümümüz başlıyor.
+            Bu hikâyenin en güzel cevabı verildi. Simdi sonsuza kadar sürecek
+            bölümümüz baslıyor
           </p>
 
           {proposal.brideMessage && (
@@ -160,7 +160,7 @@ export default function ProposalGate({
           </form>
         ) : (
           <div className="proposal-question">
-            <p>Benimle hayatının geri kalanını paylaşmak ister misin?</p>
+            <p>Benimle Evlenir Misin Minigim?</p>
 
             <div className="bride-message-field">
               <textarea

@@ -102,7 +102,7 @@ function App() {
             <MemoryBook wishes={wishes} onWishCreated={handleWishCreated} />
 
             <footer className="page-footer">
-              <h1>Seninle baslayan her gün, hayatımın en güzel hikâyesi.</h1>
+              <h1>Seninle baslayan her gün, hayatımın en güzel hikâyesi</h1>
               <h1>Bugün, yarın ve daima...</h1>
             </footer>
           </>

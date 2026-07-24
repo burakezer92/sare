@@ -84,7 +84,7 @@ export default function MemoryBook({ wishes, onWishCreated }: MemoryBookProps) {
 
       onWishCreated(newWish);
       setForm(initialForm);
-      setSuccessMessage("Güzel dilegin anı defterimize eklendi 🌸");
+      setSuccessMessage("Güzel dilegin anı defterimize eklendi");
     } catch (error) {
       setErrorMessage(
         error instanceof Error
@@ -144,7 +144,7 @@ export default function MemoryBook({ wishes, onWishCreated }: MemoryBookProps) {
             className="wish-submit-button"
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Dilegin ekleniyor..." : "Anı defterine ekle 🌸"}
+            {isSubmitting ? "Dilegin ekleniyor..." : "Anı defterine ekle"}
           </button>
 
           {errorMessage && (
@@ -165,7 +165,7 @@ export default function MemoryBook({ wishes, onWishCreated }: MemoryBookProps) {
         <div className="wish-list-container">
           {wishes.length === 0 ? (
             <div className="wish-empty-state">
-              <h1>Anı defterimizin ilk mesajını sen doldurabilirsin.</h1>
+              <h1>Anı defterimizin ilk mesajını sen doldurabilirsin</h1>
             </div>
           ) : (
             <div className="wish-list">
