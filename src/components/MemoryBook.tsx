@@ -53,8 +53,8 @@ export default function MemoryBook({ wishes, onWishCreated }: MemoryBookProps) {
       return "iyi dilek en az 3 karakter olmalı";
     }
 
-    if (trimmedMessage.length > 240) {
-      return "iyi dilek en fazla 240 karakter olabilir";
+    if (trimmedMessage.length > 480) {
+      return "iyi dilek en fazla 480 karakter olabilir";
     }
 
     return null;
@@ -136,7 +136,7 @@ export default function MemoryBook({ wishes, onWishCreated }: MemoryBookProps) {
               disabled={isSubmitting}
             />
 
-            <span className="character-counter">{form.message.length}/240</span>
+            <span className="character-counter">{form.message.length}/480</span>
           </div>
 
           <button
