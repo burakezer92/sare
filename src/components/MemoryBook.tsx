@@ -132,7 +132,7 @@ export default function MemoryBook({ wishes, onWishCreated }: MemoryBookProps) {
               placeholder="Sare & Burak için birkaç güzel kelime..."
               rows={6}
               minLength={3}
-              maxLength={240}
+              maxLength={480}
               disabled={isSubmitting}
             />
 
